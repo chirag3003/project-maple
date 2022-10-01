@@ -1,0 +1,21 @@
+{
+    "name": "maple",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src",
+    "private": "true",
+    "scripts": {
+        "dev:backend": "yarn workspace @maple/backend dev",
+        "dev:frontend": "yarn workspace @maple/frontend  dev",
+        "dev": "concurrently \"yarn dev:backend\" \"yarn dev:frontend\" ",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "workspaces": [
+        "src/packages/*"
+    ],
+    "devDependencies": {
+        "concurrently": "^7.4.0"
+    }
+}
