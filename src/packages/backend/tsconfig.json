@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "lib": ["es2018", "es5", "dom"],
+    "typeRoots": ["node_modules/@types", "./src/types"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "es6",
+    "strict": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "sourceMap": false,
+    "noImplicitAny": false
+  },
+  "exclude": ["./node_modules/**/*", "./build/**/*"],
+  "include": ["./src/**/*"],
+  "ts-node": {
+    "swc": true
+  }
+}
