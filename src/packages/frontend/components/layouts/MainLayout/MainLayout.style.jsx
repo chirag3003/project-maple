@@ -16,6 +16,7 @@ export default styled.div`
         .title {
             font-size: 3rem;
             font-weight: 600;
+            margin-bottom: 20px;
         }
     }
 `;
