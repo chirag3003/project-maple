@@ -8,6 +8,35 @@ import {
     ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 import SidebarStyle from "./Sidebar.style";
+import Link from "next/link";
+
+const sidebarList = [
+    {
+        title: "Dashboard",
+        route: "/",
+        icon: Squares2X2Icon,
+    },
+    {
+        title: "Store",
+        route: "/store",
+        icon: CircleStackIcon,
+    },
+    {
+        title: "Create",
+        route: "/create",
+        icon: PlusCircleIcon,
+    },
+    {
+        title: "Logs",
+        route: "/logs",
+        icon: ClipboardDocumentIcon,
+    },
+    {
+        title: "Services",
+        route: "/services",
+        icon: Cog8ToothIcon,
+    },
+];
 
 function Sidebar() {
     return (
@@ -22,36 +51,16 @@ function Sidebar() {
             </div>
             <div className="items w-full  xl:px-7 px-3 flex-1 pt-14">
                 <ul className="items">
-                    <li className="item">
-                        <button>
-                            <Squares2X2Icon className="h-8 w-8 mr-4" />
-                            Dashboard
-                        </button>
-                    </li>
-                    <li className="item">
-                        <button>
-                            <CircleStackIcon className="h-8 w-8 mr-4" />
-                            Store
-                        </button>
-                    </li>
-                    <li className="item">
-                        <button>
-                            <PlusCircleIcon className="h-8 w-8 mr-4" />
-                            Create
-                        </button>
-                    </li>
-                    <li className="item">
-                        <button>
-                            <ClipboardDocumentIcon className="h-8 w-8 mr-4" />
-                            Logs
-                        </button>
-                    </li>
-                    <li className="item">
-                        <button>
-                            <Cog8ToothIcon className="h-8 w-8 mr-4" />
-                            Services
-                        </button>
-                    </li>
+                    {sidebarList.map((item, index) => (
+                        <li key={index} className="item">
+                            <Link href={item.route}>
+                                <button>
+                                    <item.icon className="h-8 w-8 mr-4" />
+                                    {item.title}
+                                </button>
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </div>
             <div className="logout xl:px-7 px-3 item mb-10">
