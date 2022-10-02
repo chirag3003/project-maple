@@ -1,5 +1,6 @@
 import Seo from "components/Seo";
 import MainLayout from "components/layouts/MainLayout";
+import Files from "components/Files";
 
 export default function Store() {
     return (
@@ -7,7 +8,8 @@ export default function Store() {
             <Seo />
             <MainLayout>
                 <div>
-                    <h1 className="title">Store</h1>
+                    <h1 className="title">My Files</h1>
+                    <Files />
                 </div>
             </MainLayout>
         </div>
