@@ -1,12 +1,17 @@
 import Seo from "components/Seo";
 import MainLayout from "components/layouts/MainLayout";
-import Head from "next/head";
+import Dashboard from "components/Dashboard";
 
 export default function Home() {
-    return (
+  return (
+    <div>
+      <Seo />
+      <MainLayout>
         <div>
-            <Seo />
-            <MainLayout />
+          <h1 className="title ">Dashboard</h1>
+          <Dashboard />
         </div>
-    );
+      </MainLayout>
+    </div>
+  );
 }

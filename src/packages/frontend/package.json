@@ -1,29 +1,31 @@
 {
-    "name": "@maple/frontend",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
-    },
-    "dependencies": {
-        "@dicebear/adventurer-neutral": "^4.10.5",
-        "@dicebear/avatars": "^4.10.5",
-        "@dicebear/miniavs": "^4.10.5",
-        "@headlessui/react": "^1.7.3",
-        "@heroicons/react": "^2.0.11",
-        "next": "12.3.1",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "styled-components": "^5.3.6"
-    },
-    "devDependencies": {
-        "autoprefixer": "^10.4.12",
-        "eslint": "8.24.0",
-        "eslint-config-next": "12.3.1",
-        "postcss": "^8.4.17",
-        "tailwindcss": "^3.1.8"
-    }
+  "name": "@maple/frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@dicebear/adventurer-neutral": "^4.10.5",
+    "@dicebear/avatars": "^4.10.5",
+    "@dicebear/miniavs": "^4.10.5",
+    "@headlessui/react": "^1.7.3",
+    "@heroicons/react": "^2.0.11",
+    "@tremor/react": "^1.0.2",
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-feather": "^2.0.10",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1",
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8"
+  }
 }

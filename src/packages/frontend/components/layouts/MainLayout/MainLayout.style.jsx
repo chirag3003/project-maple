@@ -12,4 +12,11 @@ export default styled.div`
     .profile {
         background: var(--background-profile);
     }
+    main {
+        .title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+    }
 `;
