@@ -14,6 +14,7 @@
         "@dicebear/miniavs": "^4.10.5",
         "@headlessui/react": "^1.7.3",
         "@heroicons/react": "^2.0.11",
+        "@tremor/react": "^1.0.2",
         "next": "12.3.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
