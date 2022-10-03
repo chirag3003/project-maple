@@ -9,5 +9,6 @@ export default styled.div`
     .card {
         border-radius: 1rem;
         background-color: #fff;
+        padding: 15px;
     }
 `;
