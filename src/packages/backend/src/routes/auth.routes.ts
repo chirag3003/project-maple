@@ -5,14 +5,20 @@ import {
   reset_password_create,
   reset_password_update,
   sign_in,
-  verify_email,
   verify_token,
+  register,
 } from "../validations/auth.validation";
 
 const router = Router();
 const AuthControllerInstance = new AuthController();
 
 router.post("/sign-in", validate(sign_in), AuthControllerInstance.createJWT);
+
+router.post(
+  "/onboard",
+  validate(register),
+  AuthControllerInstance.createAccount
+);
 
 router.post("/token", AuthControllerInstance.reCreateJWT);
 
@@ -32,12 +38,6 @@ router.post(
   "/password-reset/verify-token",
   validate(verify_token),
   AuthControllerInstance.verifyPasswordResetToken
-);
-
-router.post(
-  "/verify-email",
-  validate(verify_email),
-  AuthControllerInstance.verifyEmail
 );
 
 export default router;

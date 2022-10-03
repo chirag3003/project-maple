@@ -2,7 +2,7 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
-import { errorHandler, notFoundHandler } from "./helpers";
+import { errorHandler, notFoundHandler, connectToDatabase } from "./helpers";
 import checkENV from "./helpers/checkENV";
 import * as pkg from "../package.json";
 import router from "./routes";
@@ -29,6 +29,7 @@ app.use("/health", (req, res) => {
     app: pkg.name,
     licence: pkg.license,
     request_ip: req.ip,
+    version: pkg.version,
     uptime: process.uptime(),
     hrtime: process.hrtime(),
   });
@@ -45,8 +46,10 @@ if (isNaN(port) || port === 0) {
   port = 4000;
 }
 
-checkENV(() => {
+checkENV(async () => {
+  await connectToDatabase();
   app.listen(port, "0.0.0.0", () => {
     console.log(`🚀 Server Started at PORT: ${port}`);
+    console.log(`🌀 Running on Dev Mode : ${isDev}`);
   });
 });
