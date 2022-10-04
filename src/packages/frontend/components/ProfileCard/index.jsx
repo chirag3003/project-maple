@@ -13,7 +13,7 @@ function ProfileCard() {
         document.querySelector(".profileCard .image").innerHTML = Svg;
     }, [Svg]);
     return (
-        <ProfileCardStyle className="profileCard    ">
+        <ProfileCardStyle className="profileCard min-h-max">
             <div className="image"></div>
             <div className="name mt-4 font-medium ">
                 <h1>{details.name}</h1>
