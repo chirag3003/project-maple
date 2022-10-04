@@ -1,21 +1,43 @@
 {
-    "name": "maple",
-    "version": "1.0.0",
-    "description": "",
-    "main": "src",
-    "private": "true",
-    "scripts": {
-        "dev:backend": "yarn workspace @maple/backend dev",
-        "dev:frontend": "yarn workspace @maple/frontend  dev",
-        "dev": "concurrently \"yarn dev:backend\" \"yarn dev:frontend\" ",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "workspaces": [
-        "src/packages/*"
-    ],
-    "devDependencies": {
-        "concurrently": "^7.4.0"
+  "name": "maple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src",
+  "private": "true",
+  "scripts": {
+    "dev:backend": "yarn workspace @maple/backend dev",
+    "dev:frontend": "yarn workspace @maple/frontend  dev",
+    "dev": "concurrently \"yarn dev:backend\" \"yarn dev:frontend\" ",
+    "pretty": "prettier --write ./src/**/*.ts",
+    "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\""
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "src/packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "kill-port": "^2.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.0"
+  },
+  "lint-staged": {
+    "**/*.{js,json,ts,css}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint-plugin-react": "^7.31.8"
+  }
 }

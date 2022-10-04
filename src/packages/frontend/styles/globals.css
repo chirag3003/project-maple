@@ -1,34 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  --font-poppins: 'Poppins', sans-serif;
-  --yellow-1:#F3DA53;
-  --yellow-2:#F1E6AC;
+:root {
+    --font-poppins: "Poppins", sans-serif;
+    --yellow-1: #f3da53;
+    --yellow-2: #f1e6ac;
+    --yellow-3: #fff7cd;
+    --text-gray: #979ca5;
+    --background-profile: #f6f2dd;
+    --background-white: #fbfaf4;
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  width:100vw;
-  overflow-x : hidden;
-  background: linear-gradient(to right, var(--yellow-2),var(--yellow-1));
-  min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+    background: linear-gradient(to right, var(--yellow-2), var(--yellow-1));
+    min-height: 100vh;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
