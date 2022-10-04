@@ -21,14 +21,15 @@ export const filter_value = Joi.alternatives(Joi.string(), Joi.number()).allow(
 export const users = {
   id: uuid,
   email: Joi.string().email(),
-  work_email: Joi.string().email(),
-  first_name: Joi.string(),
-  last_name: Joi.string(),
+
+  name: {
+    first_name: Joi.string(),
+    last_name: Joi.string(),
+  },
   password: Joi.string(),
   gender: Joi.string(),
+  username: Joi.string(),
   date_of_birth: date,
-  phone_number: Joi.alternatives().try(Joi.string(), Joi.number()), //expecting a number or a number in string form
-  company_name: Joi.string(),
+  phone_number: Joi.alternatives().try(Joi.string(), Joi.number()),
   password_reset_token: uuid,
-  email_confirmation_token: Joi.string(),
 };

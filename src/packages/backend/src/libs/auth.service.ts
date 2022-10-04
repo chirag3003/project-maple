@@ -8,7 +8,7 @@ const privateKey = fs.readFileSync("jwtRS256.key");
 export const publicKey = fs.readFileSync("jwtRS256.key.pub");
 
 export class AuthService implements IAuthService<string> {
-  async provideAuth(user: any) {
+  async provideAuth(user: any): Promise<any> {
     // generate tokens or auth identifiers here
     user = { tokenType: "access_token", ...user };
     const access_token = jwt.sign(user, privateKey, {
@@ -27,7 +27,7 @@ export class AuthService implements IAuthService<string> {
       access_token: access_token,
       refresh_token: refresh_token,
     };
-    return token as any;
+    return token;
   }
 
   provideReAuth(reAuthUser: any) {
@@ -43,14 +43,15 @@ export class AuthService implements IAuthService<string> {
     const ifVerified = jwt.verify(i, publicKey);
     return ifVerified;
   }
+
   verifyAuth(i: string) {
     // verify auth from the provided identity
     const ifVerified = jwt.verify(i, publicKey);
     return !!ifVerified;
   }
 
-  getMiddleware(isAdminRoute = false) {
-    const f = (_req: Request, _res: Response, next: NextFunction) => {
+  getMiddleware() {
+    return (_req: Request, _res: Response, next: NextFunction) => {
       try {
         // implement auth verification from the request here. All values will be provided during request service
         const token = _req.headers.authorization?.split(" ")[1] || " ";
@@ -69,12 +70,6 @@ export class AuthService implements IAuthService<string> {
             });
           }
         } else {
-          if (isAdminRoute) {
-            throw new CustomError({
-              message: "Restricted Access route",
-              statusCode: 403,
-            });
-          }
           throw new CustomError({
             message: "Unauthorized Access Declined",
             statusCode: 403,
@@ -85,6 +80,5 @@ export class AuthService implements IAuthService<string> {
         next(err);
       }
     };
-    return f;
   }
 }

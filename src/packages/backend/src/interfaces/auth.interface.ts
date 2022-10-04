@@ -4,16 +4,7 @@ export default interface AuthController {
   initatePasswordReset(req: any, res: any, next: any): Promise<undefined>;
   verifyPasswordResetToken(req: any, res: any, next: any): Promise<undefined>;
   resetPassword(req: any, res: any, next: any): Promise<undefined>;
-  verifyEmail(req: any, res: any, next: any): Promise<undefined>;
-}
-
-export interface Role {
-  id: string;
-  name: string;
-}
-
-export interface UserRole {
-  role: Role;
+  createAccount(req: any, res: any, next: any): Promise<undefined>;
 }
 
 export interface AuthModel {
@@ -24,4 +15,17 @@ export interface AuthModel {
   last_name: string;
   iat: number;
   exp: number;
+}
+
+export interface AuthUserData {
+  first_name: string;
+  last_name: string;
+  email: string;
+  username: string;
+  password: string;
+}
+
+export interface AuthLoginData {
+  user_login: string;
+  password: string;
 }
