@@ -14,6 +14,7 @@ function PasteBin() {
       <Wrapper>
         <TopBar>
           <Button>Save</Button>
+          <Button>Share</Button>
         </TopBar>
         <InputField autoFocus ref={inputElement} />
       </Wrapper>
