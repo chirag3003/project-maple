@@ -6,7 +6,7 @@ export default styled.div`
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    margin: 40px 0;
+    margin: 20px 0;
     border-color: #979ca5;
     border-bottom-width: 1px;
     .image {
