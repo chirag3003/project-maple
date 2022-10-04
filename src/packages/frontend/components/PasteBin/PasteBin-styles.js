@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const Wrapper = styled.div`
   border-radius: 8px;
-  min-height: 400px;
+  min-height: 320px;
   background-color: #ffffff;
 `;
 export const TopBar = styled.div`
