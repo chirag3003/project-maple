@@ -20,6 +20,10 @@ export const Button = styled.button`
   padding: 3px 20px;
   background-color: #343434;
   border-radius: 8px;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  gap: 5px;
   &:hover {
     background-color: #232323;
   }
