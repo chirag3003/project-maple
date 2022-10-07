@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import { Wrapper, TopBar, Button, InputField } from "./PasteBin-styles";
+import { BookmarkIcon, ShareIcon } from "@heroicons/react/24/outline";
+import { useEffect, useRef } from "react";
+import { Button, InputField, TopBar, Wrapper } from "./PasteBin-styles";
 
 function PasteBin() {
   const inputElement = useRef(null);
@@ -13,8 +14,17 @@ function PasteBin() {
     <div>
       <Wrapper>
         <TopBar>
-          <Button>Save</Button>
-          <Button>Share</Button>
+
+
+          <Button>
+            <text>Save</text>
+            <BookmarkIcon className="w-5 h-5 " />
+
+          </Button>
+          <Button>
+            <text>Share</text>
+            <ShareIcon className="w-5 h-5 " />
+          </Button>
         </TopBar>
         <InputField autoFocus ref={inputElement} />
       </Wrapper>
