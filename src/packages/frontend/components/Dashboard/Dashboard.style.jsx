@@ -23,6 +23,7 @@ export default styled.div`
         background: var(--card-grad);
         position: relative;
     }
+    
     .card::before {
         content: '';
         position: absolute;
@@ -37,6 +38,7 @@ export default styled.div`
         opacity: 0.5;
         z-index: -1;
     }
+
     .data{
         font-family: 'Noto Sans Mono', monospace;
         font-weight: 400;
