@@ -40,16 +40,16 @@ const sidebarList = [
 
 function Sidebar() {
     return (
-        <SidebarStyle className="w-1/5 bg-red h-full py-14 flex flex-col">
-            <div className="title p-6 xl:pl-8 pl-2 flex items-center">
+        <SidebarStyle className="w-72 rounded-r-3xl h-full pt-8 flex flex-col bg-white shadow-xl fixed">
+            <div className="title p-6 flex flex-col items-center ">
                 <img
                     src="/logo.svg"
                     alt="logo"
-                    className="xl:h-14 xl:w-14 lg:h-12 lg:w-12 h-10 w-10 "
+                    className="xl:h-14 xl:w-14 lg:h-12 lg:w-12 h-10 w-10"
                 />
-                <h1 className="font-bold xl:text-2xl lg:text-xl text-lg ml-5">Project Maple</h1>
+                <h1 className="font-semibold xl:text-2xl lg:text-xl text-lg text-orange-500 pt-4" >Project Maple</h1>
             </div>
-            <div className="items w-full  xl:px-7 px-3 flex-1 pt-14">
+            <div className="items w-full xl:px-7 px-3 flex-1 pt-14 font-regular text-gray-400">
                 <ul className="items">
                     {sidebarList.map((item, index) => (
                         <li key={index} className="item">
@@ -64,7 +64,7 @@ function Sidebar() {
                 </ul>
             </div>
             <div className="logout xl:px-7 px-3 item mb-10">
-                <button className="outline-none border-none flex items-center p-2 w-full text-lg font-medium ">
+                <button className="outline-none border-none flex items-center mb-5 w-full text-lg font-regular text-orange-500">
                     <ArrowRightOnRectangleIcon className="h-8 w-8 mr-4" /> Log Out
                 </button>
             </div>

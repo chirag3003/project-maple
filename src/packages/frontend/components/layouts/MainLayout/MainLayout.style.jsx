@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export default styled.div`
     .main-card {
-        background-color: var(--background-white);
+        background-color: white;
         width: 100%;
         height: 100%;
-        border-radius: 2.3rem;
         display: flex;
         overflow: hidden;
     }
@@ -14,9 +13,11 @@ export default styled.div`
     }
     main {
         .title {
-            font-size: 3rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
+            margin-top: 3rem;
+            color: 	rgb(249 115 22);
         }
     }
 `;
