@@ -6,14 +6,14 @@ export default styled.nav`
         margin-bottom: 20px;
         z-index: 10;
         button {
-        padding: 0.5rem;
-        outline: none;
-        border: none;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        font-size: 1rem;
-        font-weight: 500;
+            padding: 0.5rem;
+            outline: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 500;
         }
     }
     .active-button {
@@ -29,6 +29,7 @@ export default styled.nav`
         background: var(--card-grad);
         position: relative;
         color: white;
+        
     }
     .active-button::before {
         content: '';

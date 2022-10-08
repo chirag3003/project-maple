@@ -58,7 +58,7 @@ function Sidebar() {
                         <li key={index} className="item">
                             <Link href={item.route}>
                                 <button className={
-                                    (route.pathname === item.route) ?
+                                    (route.pathname === item.route || route.pathname === item.route + '/') ?
                                         "active-button" : ""
                                 }>
                                     <item.icon className="h-8 w-8 mr-4" />
