@@ -13,13 +13,11 @@ function PasteBin() {
   return (
     <div>
       <Wrapper>
-        <TopBar>
-
-
+        <span className="title">PasteBin</span>
+        <TopBar className="mt-8">
           <Button>
             <text>Save</text>
             <BookmarkIcon className="w-5 h-5 " />
-
           </Button>
           <Button>
             <text>Share</text>
