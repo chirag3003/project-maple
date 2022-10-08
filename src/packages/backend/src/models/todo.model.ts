@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import crypto from "crypto";
 
-const authSchema: mongoose.Schema = new mongoose.Schema(
+const todoSchema: mongoose.Schema = new mongoose.Schema(
   {
     content: {
       type: String,
@@ -23,18 +23,18 @@ const authSchema: mongoose.Schema = new mongoose.Schema(
   }
 );
 
-authSchema.methods.setPassword = function (password) {
+todoSchema.methods.setPassword = function (password) {
   this.salt = crypto.randomBytes(16).toString("hex");
   this.hash = crypto
     .pbkdf2Sync(password, this.salt, 10000, 512, "sha512")
     .toString("hex");
 };
 
-authSchema.methods.validatePassword = function (password) {
+todoSchema.methods.validatePassword = function (password) {
   const hash = crypto
     .pbkdf2Sync(password, this.salt, 10000, 512, "sha512")
     .toString("hex");
   return this.hash === hash;
 };
 
-export default mongoose.model("User", authSchema);
+export default mongoose.model("User", todoSchema);

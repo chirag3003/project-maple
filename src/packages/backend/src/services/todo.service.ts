@@ -1,7 +1,7 @@
 import ITodoService, { TodoModel } from "../interfaces/todo.interface";
 import Todo from "../models/todo.model";
 
-export default class TodoService {
+export default class TodoService implements ITodoService {
   public async createTodo(reqData: TodoModel): Promise<any> {
     const todo = new Todo(reqData);
     await todo.save();
