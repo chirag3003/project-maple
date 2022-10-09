@@ -1,4 +1,4 @@
-import ITodoService, { TodoModel } from "../interfaces/todo.interface";
+import { ITodoService, TodoModel } from "../interfaces/todo.interface";
 import Todo from "../models/todo.model";
 
 export default class TodoService implements ITodoService {
@@ -11,38 +11,21 @@ export default class TodoService implements ITodoService {
     const response = await Todo.findByIdAndUpdate(
       id,
       { completed: true },
-      { new: true },
-      (err: any, todo: any) => {
-        if (err) throw new Error(err.message);
-        return todo;
-      }
+      { new: true }
     );
     return response;
   }
   public async deleteTodo(id: string): Promise<any> {
-    const response = await Todo.findByIdAndDelete(id, (err: any, todo: any) => {
-      if (err) throw new Error(err.message);
-      return todo;
-    });
+    const response = await Todo.findByIdAndDelete(id);
     return response;
   }
   public async updateTodo(id: string, reqData: TodoModel): Promise<any> {
-    const response = await Todo.findByIdAndUpdate(
-      id,
-      reqData,
-      { new: true },
-      (err: any, todo: any) => {
-        if (err) throw new Error(err.message);
-        return todo;
-      }
-    );
+    const response = await Todo.findByIdAndUpdate(id, reqData, { new: true });
     return response;
   }
-  public async getTodos(): Promise<any> {
-    const response = await Todo.find({}, (err: any, todos: any) => {
-      if (err) throw new Error(err.message);
-      return todos;
-    });
+  public async getTodos(page: number, limit: number): Promise<any> {
+    const skip = (page - 1) * limit;
+    const response = await Todo.find({}).skip(skip);
     return response;
   }
 }

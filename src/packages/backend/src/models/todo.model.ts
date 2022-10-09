@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import crypto from "crypto";
 
 const todoSchema: mongoose.Schema = new mongoose.Schema(
   {
@@ -23,18 +22,24 @@ const todoSchema: mongoose.Schema = new mongoose.Schema(
   }
 );
 
-todoSchema.methods.setPassword = function (password) {
-  this.salt = crypto.randomBytes(16).toString("hex");
-  this.hash = crypto
-    .pbkdf2Sync(password, this.salt, 10000, 512, "sha512")
-    .toString("hex");
+todoSchema.methods = {
+  view(full) {
+    const view = {
+      id: this.id,
+      content: this.content,
+      attributes: {
+        color: this.attributes,
+      },
+      completed: this.completed,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt,
+    };
+    return full
+      ? {
+          ...view,
+        }
+      : view;
+  },
 };
 
-todoSchema.methods.validatePassword = function (password) {
-  const hash = crypto
-    .pbkdf2Sync(password, this.salt, 10000, 512, "sha512")
-    .toString("hex");
-  return this.hash === hash;
-};
-
-export default mongoose.model("User", todoSchema);
+export default mongoose.model("Todos", todoSchema);
