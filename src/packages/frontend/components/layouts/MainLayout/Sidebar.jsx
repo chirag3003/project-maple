@@ -1,4 +1,5 @@
-import React from "react";
+import { React } from "react";
+import { useRouter } from 'next/router';
 import {
     Squares2X2Icon,
     CircleStackIcon,
@@ -39,6 +40,8 @@ const sidebarList = [
 ];
 
 function Sidebar() {
+    const route = useRouter();
+    console.log(route.pathname);
     return (
         <SidebarStyle className="w-72 rounded-r-3xl h-full pt-8 flex flex-col bg-white shadow-xl fixed">
             <div className="title p-6 flex flex-col items-center ">
@@ -54,7 +57,10 @@ function Sidebar() {
                     {sidebarList.map((item, index) => (
                         <li key={index} className="item">
                             <Link href={item.route}>
-                                <button>
+                                <button className={
+                                    (route.pathname === item.route || route.pathname === item.route + '/') ?
+                                        "active-button" : ""
+                                }>
                                     <item.icon className="h-8 w-8 mr-4" />
                                     {item.title}
                                 </button>
