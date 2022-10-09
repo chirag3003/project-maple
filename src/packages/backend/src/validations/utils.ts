@@ -21,7 +21,6 @@ export const filter_value = Joi.alternatives(Joi.string(), Joi.number()).allow(
 export const users = {
   id: uuid,
   email: Joi.string().email(),
-
   name: {
     first_name: Joi.string(),
     last_name: Joi.string(),
@@ -32,4 +31,13 @@ export const users = {
   date_of_birth: date,
   phone_number: Joi.alternatives().try(Joi.string(), Joi.number()),
   password_reset_token: uuid,
+};
+
+export const todos = {
+  id: uuid,
+  content: Joi.string(),
+  completed: Joi.boolean(),
+  attributes: {
+    color: Joi.string(),
+  },
 };

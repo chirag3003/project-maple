@@ -1,10 +1,36 @@
+import { Request, Response, NextFunction } from "express";
+
 export default interface AuthController {
-  createJWT(req: any, res: any, next: any): Promise<undefined>;
-  reCreateJWT(req: any, res: any, next: any): Promise<undefined>;
-  initatePasswordReset(req: any, res: any, next: any): Promise<undefined>;
-  verifyPasswordResetToken(req: any, res: any, next: any): Promise<undefined>;
-  resetPassword(req: any, res: any, next: any): Promise<undefined>;
-  createAccount(req: any, res: any, next: any): Promise<undefined>;
+  createJWT(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<undefined>;
+  reCreateJWT(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<undefined>;
+  initatePasswordReset(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<undefined>;
+  verifyPasswordResetToken(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<undefined>;
+  resetPassword(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<undefined>;
+  createAccount(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<undefined>;
 }
 
 export interface AuthModel {

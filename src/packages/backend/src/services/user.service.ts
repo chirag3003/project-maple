@@ -1,5 +1,5 @@
 import { AuthUserData, AuthLoginData } from "../interfaces/auth.interface";
-import User from "../models/auth";
+import User from "../models/auth.model";
 import IUserService from "../interfaces/user.interface";
 
 export default class UserServiceClass implements IUserService {
