@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { nanoid } from "napi-nanoid";
-import { PastebinData } from "../interfaces/pastebin.interface";
 
 const pastebinSchema: mongoose.Schema = new mongoose.Schema(
     {
@@ -27,6 +26,11 @@ const pastebinSchema: mongoose.Schema = new mongoose.Schema(
                 default: false,
             },
         },
+        views:{
+            type:Number,
+            default:0,
+            min:0,
+        }
     },
     {
         timestamps: true,

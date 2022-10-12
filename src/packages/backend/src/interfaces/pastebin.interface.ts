@@ -3,6 +3,7 @@ export default interface IPastebinService {
     editBin(id: string, content: string): Promise<undefined>;
     deleteBin(id: string): Promise<undefined>;
     getBin(id: string): Promise<undefined>;
+    addView(id: string): Promise<undefined>;
     getBins(): Promise<undefined>;
 }
 
@@ -16,5 +17,11 @@ export interface IPastebinController {
 
 export interface PastebinData {
     content: string;
-    id?: string;
+    pastebinId?: string;
+    attributes?:{
+        password?:string;
+        isPrivate:boolean;
+        viewOnce?:boolean
+    }
+    views?:number
 }
