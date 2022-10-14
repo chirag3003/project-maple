@@ -17,11 +17,11 @@ export default function Logo(props) {
         <>
             <div
                 onClick={propsData?.onClicks?.root}
-                className={`flex cursor-pointer flex-row items-center gap-2   ${propsData?.classNames?.root}`}
+                className={`flex cursor-pointer flex-row items-center gap-2 ${propsData?.classNames?.root}`}
             >
                 <img
                     onClick={propsData?.onClicks?.image}
-                    className={`${propsData?.classNames?.image} lg:w-20 lg:h-20 w-12 h-12`}
+                    className={`${propsData?.classNames?.image}  w-12 h-12`}
                     src='/logo.svg'
                     alt='logo'
                 />
@@ -29,7 +29,7 @@ export default function Logo(props) {
                     onClick={propsData?.onClicks?.text}
                     className={`text-2xl ${
                         propsData?.isOpen && 'lg:hidden'
-                    } font-bold text-orange-500 whitespace-nowrap ${
+                    } font-bold text-center text-orange-500  ${
                         propsData?.classNames?.text
                     }`}
                 >

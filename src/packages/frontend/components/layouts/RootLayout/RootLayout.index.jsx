@@ -7,7 +7,9 @@ export default function RootLayout({ children }) {
     return (
         <div className='relative flex flex-col w-screen h-screen lg:flex-row '>
             <div
-                className={`  w-full  ${isOpen ? 'lg:w-[90px]' : ' lg:w-1/6 '}`}
+                className={`sticky transition-all lg:h-full w-full  ${
+                    isOpen ? 'lg:w-[90px]' : 'h-full lg:w-1/6 '
+                }`}
             >
                 <RootLayoutSidebar
                     data={{
@@ -17,8 +19,9 @@ export default function RootLayout({ children }) {
                 />
             </div>
             <div
-                className={`w-full overflow-hidden  ${
-                    !isOpen && ' lg:w-5/6 lg:h-full'
+                className={`w-full h-full overflow-hidden  ${
+                    !isOpen &&
+                    'hidden lg:block transition-all lg:w-5/6 lg:h-full'
                 }`}
             >
                 <RootLayoutBody children={children} />
