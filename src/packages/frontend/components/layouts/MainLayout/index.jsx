@@ -5,13 +5,12 @@ import Sidebar from "./Sidebar";
 
 function MainLayout({ children }) {
     return (
-        <MainLayoutStyle className="w-full flex h-screen">
+        <MainLayoutStyle className="w-full flex h-screen ">
             <Sidebar />
-            <div className="w-full pl-96 flex-col">
-                <div className="text-2xl font-regular pt-14 pb-10">Welcome, Chirag Bhalotia</div>
-                <div className="main-card rounded-tl-3xl shadow-xl w-full">
-                    <main className="w-full pl-12 overflow-y-auto">{children}</main>
-                    {/* <Profile /> */}
+            <div className="w-4/5 h-full py-6 px-4">
+                <div className="main-card shadow-2xl">
+                    <main className="w-3/4 h-full p-10 pt-14 overflow-y-auto ">{children}</main>
+                    <Profile />
                 </div>
             </div>
         </MainLayoutStyle>

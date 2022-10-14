@@ -7,7 +7,7 @@ function pastebin() {
   return (
     <>
       <MainLayout>
-        <div>
+        <div style={{ padding: "50px" }}>
           <PasteBin></PasteBin>
         </div>
       </MainLayout>

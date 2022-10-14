@@ -1,7 +1,6 @@
-import { PlusIcon } from "@heroicons/react/24/outline";
-import React from "react";
-import FilesStyle from "./Files.style";
-import File from "./File";
+import { PlusIcon } from '@heroicons/react/24/outline';
+import File from './File';
+import FilesStyle from './Files.style';
 
 function Files() {
     return (
