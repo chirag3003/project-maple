@@ -7,7 +7,7 @@ export default function RootLayoutBody({ children }) {
                 <RootLayoutBodyHeader />
             </div>
             <div
-                className={` lg:ml-4 w-full min-h-full h-max bg-white lg:rounded-tl-3xl `}
+                className={`w-full min-h-full h-max bg-white lg:rounded-tl-3xl `}
             >
                 {children}
             </div>

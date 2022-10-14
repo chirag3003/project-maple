@@ -4,7 +4,7 @@ import {
     ClipboardDocumentIcon,
     Cog8ToothIcon,
     PlusCircleIcon,
-    Squares2X2Icon
+    Squares2X2Icon,
 } from '@heroicons/react/24/outline';
 import Logo from 'components/common/Logo/Logo.index';
 import ProfileImage from 'components/common/ProfileImage/ProfileImage.index';
@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import {
     StyledRootLayoutSidebarLogout,
-    StyledRootLayoutSidebarMenu
+    StyledRootLayoutSidebarMenu,
 } from './Sidebar.styles';
 
 const SideBarIcon = (props) => {
@@ -45,7 +45,10 @@ const SideBarIcon = (props) => {
                 >
                     <propsData.icon className='w-7 h-7 ' />
                     <text
-                        className={`    text-xl whitespace-nowrap font-medium`}
+                        className={` ${
+                            propsData?.isOpen &&
+                            'hidden group-hover:block group-hover:absolute left-12 shadow-lg text-black bg-white p-2 rounded-md'
+                        }   text-xl whitespace-nowrap font-medium`}
                     >
                         {propsData?.title}
                     </text>
@@ -83,11 +86,6 @@ export default function RootLayoutSidebar(props) {
             icon: ClipboardDocumentIcon,
         },
         {
-            title: 'PasteBin',
-            route: 'pastebin',
-            icon: Cog8ToothIcon,
-        },
-        {
             title: 'Services',
             route: 'services',
             icon: Cog8ToothIcon,
@@ -96,7 +94,7 @@ export default function RootLayoutSidebar(props) {
 
     return (
         <div
-            className={` h-full ${
+            className={`h-full ${
                 propsData?.isOpen ? 'lg:pr-2' : 'lg:pr-4'
             }  flex items-center justify-start`}
         >
@@ -110,6 +108,10 @@ export default function RootLayoutSidebar(props) {
                 >
                     <div className='flex items-center justify-center w-full '>
                         <Logo
+                            onClicks={{
+                                root: () =>
+                                    propsData?.setIsOpen(!propsData?.isOpen),
+                            }}
                             classNames={{
                                 root: !propsData?.isOpen && 'flex-col',
                             }}
