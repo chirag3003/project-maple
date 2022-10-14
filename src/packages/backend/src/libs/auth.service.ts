@@ -4,7 +4,7 @@ import fs from "fs";
 import jwt from "jsonwebtoken";
 import { CustomError } from "../helpers/errors";
 
-const privateKey = fs.readFileSync("jwtRS256.key");
+export const privateKey = fs.readFileSync("jwtRS256.key");
 export const publicKey = fs.readFileSync("jwtRS256.key.pub");
 
 export class AuthService implements IAuthService<string> {

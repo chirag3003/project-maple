@@ -4,11 +4,11 @@ import FilesStyle from './Files.style';
 
 function Files() {
     return (
-        <FilesStyle>
-            <button className='flex items-center p-2 px-4 mb-5 font-medium text-white border-2 rounded-lg background '>
-                Add File <PlusIcon height={16} width={16} />
+        <FilesStyle className="z-10 relative">
+            <button className="add-button p-2 px-4 mb-5 flex items-center font-medium rounded-lg text-white">
+                Add File &nbsp; <PlusIcon height={20} width={20} />
             </button>
-            <div className='w-full h-auto file-list '>
+            <div className="file-list h-auto w-full">
                 <File />
                 <File />
                 <File />
