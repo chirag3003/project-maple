@@ -1,15 +1,14 @@
-import { PlusIcon } from "@heroicons/react/24/outline";
-import React from "react";
-import FilesStyle from "./Files.style";
-import File from "./File";
+import { PlusIcon } from '@heroicons/react/24/outline';
+import File from './File';
+import FilesStyle from './Files.style';
 
 function Files() {
     return (
         <FilesStyle>
-            <button className="p-2 px-4 mb-5 flex items-center font-medium rounded-lg bg-yellow-100 text-yellow-500 border-2 border-yellow-500">
+            <button className='flex items-center p-2 px-4 mb-5 font-medium text-white border-2 rounded-lg background '>
                 Add File <PlusIcon height={16} width={16} />
             </button>
-            <div className="file-list h-auto w-full ">
+            <div className='w-full h-auto file-list '>
                 <File />
                 <File />
                 <File />

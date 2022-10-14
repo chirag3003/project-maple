@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.div`
     border-radius: 1rem;
@@ -20,6 +20,6 @@ export default styled.div`
         border-radius: 1rem;
         background-color: #fff;
         padding: 15px;
-        background-color: var(--yellow-1);
+        background: var(--card-grad);
     }
 `;
