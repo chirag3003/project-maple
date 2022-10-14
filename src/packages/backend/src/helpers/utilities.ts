@@ -11,7 +11,7 @@ export const makeResponse = (
   data,
 });
 
-const joinPrefix = (...keys: string[]) => keys.join("_");
+export const joinPrefix = (...keys: string[]) => keys.join("_");
 
 export const flattenObject = (obj: any, prefix = "") => {
   let newObj: any = {};
@@ -55,41 +55,11 @@ export const cleanObjectKeepNull = (obj: any) => {
 };
 
 export const paginateRequest = (q: any): PaginationType => {
-  const filter_keys = Object.keys(q).filter((c) => c.startsWith("filter_"));
-  const filters = filter_keys.length
-    ? filter_keys
-        .map((filter_key) => {
-          const filter_subset = filter_key.replace("filter_", "").split(".");
-          let mode = typeof q[filter_key] === "number" ? "_eq" : "_iregex";
-          // check if the provided value if uuid - if so, we use the _eq operator to match
-          if (q[filter_key].includes("-")) {
-            mode = "_eq";
-          }
-
-          return parseFilter(filter_subset, q[filter_key], 0, mode);
-        })
-        .reduceRight((agg, cur) => {
-          const [cur_key] = Object.keys(cur);
-          if (cur_key in agg) {
-            if (Array.isArray(agg[cur_key])) {
-              agg[cur_key].push(cur);
-            } else {
-              cur[cur_key] = [cur[cur_key], agg[cur_key]];
-            }
-            return cur;
-          }
-          return {
-            ...agg,
-            ...cur,
-          };
-        }, {})
-    : undefined;
   return {
-    page: parseInt(q.page) || 0,
-    limit: parseInt(q.limit || q.items) || 50,
+    page: parseInt(q.page) || 1,
+    limit: parseInt(q.limit || q.items) || 10,
     sort_by: q.sort_by,
     sort_order: q.sort_order || "asc",
-    filters,
   } as PaginationType;
 };
 
